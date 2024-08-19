@@ -4,10 +4,10 @@ import (
 	"fmt"
 )
 
-
+const greeting = "Hello, "
 // domain code: this means this function returns a string
 func Hello(name string) string {
-	return "Hello, " + name
+	return greeting + name
 }
 
 // entry point of the program: exposes the domain code to the outside world
