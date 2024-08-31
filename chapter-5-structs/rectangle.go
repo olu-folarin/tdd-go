@@ -15,12 +15,16 @@ type Circle struct {
 }
 
 type Shape interface {
-	area() float64
-	perimeter() float64
+	Area() float64
+	Perimeter() float64
 }
 
 func (c Circle) Area() float64 {
 	return math.Pi * c.Radius * c.Radius
+}
+
+func (c Circle) Perimeter() float64 {
+	return 2 * math.Pi * c.Radius
 }
 
 func (r Rectangle) Area() float64 {
