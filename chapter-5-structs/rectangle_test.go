@@ -9,11 +9,31 @@ func TestArea(t *testing.T) {
 	}{
 		{Rectangle{7.7, 12.5}, 96.25},
 		{Circle{10}, 314.1592653589793},
+		{Square{7.0}, 49.0},
 	}
 
 	// iterate over the test cases
 	for _, tt := range areaTests {
 		got := tt.shape.Area()
+		if got != tt.want {
+			t.Errorf("got %.2f want %.2f", got, tt.want)
+		}
+	}
+}
+
+// new test case for parameter
+func TestPerimeter(t *testing.T) {
+	parameterTests := []struct {
+		shape Shape
+		want float64
+	}{
+		{Rectangle{7.7, 12.5}, 40.4},
+		{Circle{10}, 62.83185307179586},
+		{Square{4}, 16},
+	}
+
+	for _, tt := range parameterTests {
+		got := tt.shape.Perimeter()
 		if got != tt.want {
 			t.Errorf("got %.2f want %.2f", got, tt.want)
 		}
@@ -41,12 +61,14 @@ func TestArea(t *testing.T) {
 // 	})
 // }
 
-func TestPerimeter(t *testing.T) {
-	rectangle := Rectangle{10.7, 5.8}
-	got := rectangle.Perimeter()
-	want := 33.0
 
-	if got != want {
-		t.Errorf("got %.2f want %.2f", got, want)
-	}
-}
+
+// func TestPerimeter(t *testing.T) {
+// 	rectangle := Rectangle{10.7, 5.8}
+// 	got := rectangle.Perimeter()
+// 	want := 33.0
+
+// 	if got != want {
+// 		t.Errorf("got %.2f want %.2f", got, want)
+// 	}
+// }
