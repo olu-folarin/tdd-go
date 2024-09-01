@@ -7,7 +7,7 @@ import (
 
 // run type conversion from int to Bitcoin
 func TestWallet(t *testing.T) {
-	// deduplicate the code
+	// deduplicate the tests
 	assertBalance := func(t *testing.T, wallet Wallet, want Bitcoin) {
 		t.Helper()
 		got := wallet.Total()
